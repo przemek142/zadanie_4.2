@@ -11,45 +11,13 @@ public class Zadanie4_2 {
         Line line = new Line(a1, b1);
         Line line2 = new Line(a2, b2);
 
-
-        line.printInfo();
-        line2.printInfo();
-
-        lineTest=compare.returnGrater(line,line2);
-
-        compare.printInfo();
-        System.out.printf("Długość: %.2f, początek: (%.1f,%.1f), koniec: (%.1f,%.1f)\n ",
-                lineTest.getLength(),
-                lineTest.getAx(),
-                lineTest.getAy(),
-                lineTest.getBx(),
-                lineTest.getBy()
-        );
+        compare.printInfo(compare.returnGrater(line, line2));
 
         line2.setBy(50);
-
-        lineTest=compare.returnGrater(line,line2);
-
-        compare.printInfo();
-        System.out.printf("Długość: %.2f, początek: (%.1f,%.1f), koniec: (%.1f,%.1f)\n ",
-                lineTest.getLength(),
-                lineTest.getAx(),
-                lineTest.getAy(),
-                lineTest.getBx(),
-                lineTest.getBy()
-        );
+        compare.printInfo(compare.returnGrater(line, line2));
 
         line2.setBy(5);
+        compare.printInfo(compare.returnGrater(line, line2));
 
-        lineTest=compare.returnGrater(line,line2);
-
-        compare.printInfo();
-        System.out.printf("Długość: %.2f, początek: (%.1f,%.1f), koniec: (%.1f,%.1f)\n ",
-                lineTest.getLength(),
-                lineTest.getAx(),
-                lineTest.getAy(),
-                lineTest.getBx(),
-                lineTest.getBy()
-        );
     }
 }

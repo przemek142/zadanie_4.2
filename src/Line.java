@@ -1,64 +1,56 @@
 import java.lang.Math;
 
 public class Line {
-
-    private double ax, ay, bx, by;
+    Point start, end;
     private double length;
 
-    private void setLength() {
-        length = Math.sqrt(Math.pow(bx - ax, 2) + Math.pow(by - ay, 2)) ;
+    public void setLength() {
+        length = Math.sqrt(Math.pow(end.getX() - start.getX(), 2) + Math.pow(end.getY() - start.getY(), 2)) ;
     }
 
     public double getLength() {
+
         return length;
     }
 
-    public void printInfo(){
-        System.out.println("length: " + length);
-    }
-
     public void setAx(double ax) {
-        this.ax = ax;
-        setLength();
+        start.setX(ax);
     }
 
     public void setAy(double ay) {
-        this.ay = ay;
-        setLength();
+        start.setY(ay);
     }
 
     public void setBx(double bx) {
-        this.bx = bx;
-        setLength();
+        end.setX(bx);
     }
 
     public void setBy(double by) {
-        this.by = by;
-        setLength();
+        end.setY(by);
     }
 
-    public double getAx() {
-        return ax;
+    public double getAx()
+    {
+        return start.getX();
     }
 
     public double getAy() {
-        return ay;
+
+        return start.getY();
     }
 
     public double getBx() {
-        return bx;
+
+        return end.getX();
     }
 
     public double getBy() {
-        return by;
+        return end.getY();
     }
 
     public Line(Point a, Point b) {
-        ax = a.getX();
-        ay = a.getY();
-        bx = b.getX();
-        by = b.getY();
-        setLength();
+        start=a;
+        end=b;
     }
 
 }
